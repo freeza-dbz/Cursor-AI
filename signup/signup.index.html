@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Student & Contributor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./signup.style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <section class="card">
+            <header class="tabs" role="tablist" aria-label="Signup type">
+                <button id="tab-student" role="tab" aria-selected="true" aria-controls="panel-student"
+                    class="tab active">Student</button>
+                <button id="tab-contributor" role="tab" aria-selected="false" aria-controls="panel-contributor"
+                    class="tab">Contributor</button>
+            </header>
+
+            <section id="panel-student" role="tabpanel" aria-labelledby="tab-student" class="panel active">
+                <form id="student-form" novalidate>
+                    <h2 class="section-title">Basic Info</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label for="student-fullname">Full Name</label>
+                            <input type="text" id="student-fullname" name="fullName" autocomplete="name" required />
+                            <p class="hint">Enter your legal name.</p>
+                        </div>
+
+                        <div class="field">
+                            <label>Email or Phone</label>
+                            <div class="inline-choice">
+                                <label class="radio">
+                                    <input type="radio" name="student-contact-method" value="email" checked />
+                                    <span>Email</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="student-contact-method" value="phone" />
+                                    <span>Phone</span>
+                                </label>
+                            </div>
+                            <div class="stack">
+                                <input type="email" id="student-email" name="email" placeholder="name@example.com"
+                                    autocomplete="email" />
+                                <input type="tel" id="student-phone" name="phone" placeholder="e.g., 9876543210"
+                                    inputmode="tel" pattern="[0-9\-+\s]{6,}" class="hidden" />
+                                <div class="otp-row">
+                                    <button type="button" class="btn secondary" data-action="send-otp"
+                                        data-scope="student">Send OTP</button>
+                                    <input type="text" class="otp-input" data-scope="student" placeholder="Enter OTP"
+                                        inputmode="numeric" pattern="\d{4,8}" aria-label="OTP" />
+                                    <button type="button" class="btn tertiary" data-action="verify-otp"
+                                        data-scope="student">Verify</button>
+                                    <span class="otp-status" data-scope="student" aria-live="polite"></span>
+                                </div>
+                            </div>
+                            <p class="hint">We use OTP/email verification for account security.</p>
+                        </div>
+
+                        <div class="field">
+                            <label for="student-password">Password</label>
+                            <input type="password" id="student-password" name="password" minlength="8"
+                                autocomplete="new-password" required />
+                            <p class="hint">Minimum 8 characters.</p>
+                        </div>
+
+                        <div class="field">
+                            <label for="student-dob">Date of Birth</label>
+                            <input type="date" id="student-dob" name="dob" required />
+                            <p class="hint">Required for age-based content filtering.</p>
+                        </div>
+
+                        <div class="field">
+                            <label for="student-gender">Gender (optional)</label>
+                            <select id="student-gender" name="gender">
+                                <option value="">Prefer not to say</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="nonbinary">Non-binary</option>
+                                <option value="self-describe">Self describe</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Academic Info</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label for="student-institution">School / College Name</label>
+                            <input type="text" id="student-institution" name="institution" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="student-grade">Grade / Class</label>
+                            <select id="student-grade" name="grade" required>
+                                <option value="">Select grade</option>
+                                <option>6th</option>
+                                <option>7th</option>
+                                <option>8th</option>
+                                <option>9th</option>
+                                <option>10th</option>
+                                <option>11th</option>
+                                <option>12th</option>
+                                <option>UG Year 1</option>
+                                <option>UG Year 2</option>
+                                <option>UG Year 3</option>
+                                <option>UG Year 4</option>
+                                <option>PG</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="student-board">Board / Stream</label>
+                            <select id="student-board" name="board" required>
+                                <option value="">Select board/stream</option>
+                                <option>CBSE</option>
+                                <option>ICSE</option>
+                                <option>State</option>
+                                <option>Science</option>
+                                <option>Commerce</option>
+                                <option>Arts</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Preferences</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label>Interests</label>
+                            <div class="choices">
+                                <label><input type="checkbox" name="interests" value="Science" /> Science</label>
+                                <label><input type="checkbox" name="interests" value="Math" /> Math</label>
+                                <label><input type="checkbox" name="interests" value="Tech" /> Tech</label>
+                                <label><input type="checkbox" name="interests" value="Nature" /> Nature</label>
+                                <label><input type="checkbox" name="interests" value="Space" /> Space</label>
+                                <label><input type="checkbox" name="interests" value="Arts" /> Arts</label>
+                                <label><input type="checkbox" name="interests" value="Sports" /> Sports</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="student-language">Preferred Language</label>
+                            <select id="student-language" name="language" required>
+                                <option>English</option>
+                                <option>Hindi</option>
+                                <option>Bengali</option>
+                                <option>Marathi</option>
+                                <option>Telugu</option>
+                                <option>Tamil</option>
+                                <option>Gujarati</option>
+                                <option>Kannada</option>
+                                <option>Malayalam</option>
+                                <option>Punjabi</option>
+                                <option>Odia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Consent</h2>
+                    <div class="grid">
+                        <div class="field guardian" id="student-guardian-group" hidden>
+                            <label>Parental/Guardian Contact (required if under 18)</label>
+                            <div class="stack">
+                                <input type="email" id="student-guardian-email" name="guardianEmail"
+                                    placeholder="Guardian email" />
+                                <input type="tel" id="student-guardian-phone" name="guardianPhone"
+                                    placeholder="Guardian phone" pattern="[0-9\-+\s]{6,}" />
+                                <p class="hint">Provide at least one: email or phone.</p>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" id="student-terms" name="agreeTerms" required />
+                                <span>I agree to the <a href="#" target="_blank" rel="noopener">Terms</a> & <a href="#"
+                                        target="_blank" rel="noopener">Privacy Policy</a></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn primary">Create Student Account</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="panel-contributor" role="tabpanel" aria-labelledby="tab-contributor" class="panel">
+                <form id="contributor-form" novalidate>
+                    <h2 class="section-title">Basic Info</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label for="contrib-fullname">Full Name</label>
+                            <input type="text" id="contrib-fullname" name="fullName" autocomplete="name" required />
+                        </div>
+
+                        <div class="field">
+                            <label>Email or Phone</label>
+                            <div class="inline-choice">
+                                <label class="radio">
+                                    <input type="radio" name="contrib-contact-method" value="email" checked />
+                                    <span>Email</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="contrib-contact-method" value="phone" />
+                                    <span>Phone</span>
+                                </label>
+                            </div>
+                            <div class="stack">
+                                <input type="email" id="contrib-email" name="email" placeholder="name@example.com"
+                                    autocomplete="email" />
+                                <input type="tel" id="contrib-phone" name="phone" placeholder="e.g., 9876543210"
+                                    inputmode="tel" pattern="[0-9\-+\s]{6,}" class="hidden" />
+                                <div class="otp-row">
+                                    <button type="button" class="btn secondary" data-action="send-otp"
+                                        data-scope="contrib">Send OTP</button>
+                                    <input type="text" class="otp-input" data-scope="contrib" placeholder="Enter OTP"
+                                        inputmode="numeric" pattern="\d{4,8}" aria-label="OTP" />
+                                    <button type="button" class="btn tertiary" data-action="verify-otp"
+                                        data-scope="contrib">Verify</button>
+                                    <span class="otp-status" data-scope="contrib" aria-live="polite"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-password">Password</label>
+                            <input type="password" id="contrib-password" name="password" minlength="8"
+                                autocomplete="new-password" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-dob">Date of Birth</label>
+                            <input type="date" id="contrib-dob" name="dob" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-gender">Gender (optional)</label>
+                            <select id="contrib-gender" name="gender">
+                                <option value="">Prefer not to say</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="nonbinary">Non-binary</option>
+                                <option value="self-describe">Self describe</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Academic / Professional Credentials</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label for="contrib-qualification">Qualification</label>
+                            <select id="contrib-qualification" name="qualification" required>
+                                <option value="">Select qualification</option>
+                                <option>Graduate</option>
+                                <option>Postgraduate</option>
+                                <option>Professional</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Field of Expertise</label>
+                            <div class="choices">
+                                <label><input type="checkbox" name="expertise" value="Math" /> Math</label>
+                                <label><input type="checkbox" name="expertise" value="Science" /> Science</label>
+                                <label><input type="checkbox" name="expertise" value="Literature" /> Literature</label>
+                                <label><input type="checkbox" name="expertise" value="Technology" /> Technology</label>
+                                <label><input type="checkbox" name="expertise" value="Arts" /> Arts</label>
+                                <label><input type="checkbox" name="expertise" value="Social Studies" /> Social
+                                    Studies</label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-degree">Upload Degree/Certificate (PDF/Image)</label>
+                            <input type="file" id="contrib-degree" name="degree" accept="application/pdf,image/*"
+                                required />
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-institution">Institution/Organization Name</label>
+                            <input type="text" id="contrib-institution" name="institution" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-experience">Experience (Years) (optional)</label>
+                            <input type="number" id="contrib-experience" name="experienceYears" min="0" step="1" />
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Additional</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label for="contrib-bio">Profile Bio</label>
+                            <textarea id="contrib-bio" name="bio" rows="3" placeholder="Short intro"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-link">LinkedIn / Portfolio / Website (optional)</label>
+                            <input type="url" id="contrib-link" name="profileLink" placeholder="https://example.com" />
+                        </div>
+
+                        <div class="field">
+                            <label for="contrib-ids">Verification Documents (ID proof)</label>
+                            <input type="file" id="contrib-ids" name="verificationDocs" accept="application/pdf,image/*"
+                                multiple />
+                            <p class="hint">Accepted: Aadhaar, Passport, Driving License (PDF/JPG/PNG)</p>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Consent</h2>
+                    <div class="grid">
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" id="contrib-terms" name="agreeTerms" required />
+                                <span>I agree to the <a href="#" target="_blank" rel="noopener">Terms</a>, <a href="#"
+                                        target="_blank" rel="noopener">Privacy Policy</a>, and <a href="#"
+                                        target="_blank" rel="noopener">Community Guidelines</a></span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" id="contrib-moderation" name="consentModeration" required />
+                                <span>Consent for Moderation (content will be reviewed)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn primary">Create Contributor Account</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <dialog id="success-dialog">
+        <h3>Signup Submitted</h3>
+        <p>Your information has been captured. This demo does not send data to a server.</p>
+        <form method="dialog">
+            <button class="btn primary">Close</button>
+        </form>
+    </dialog>
+
+    <script src="./signup.script.js"></script>
+</body>
+
+</html>
