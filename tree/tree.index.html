@@ -10,17 +10,15 @@
 
 <body>
     <div class="tree-container">
-        <h1>📚 My Knowledge Tree</h1>
-        <div class="tree">
-            <div class="trunk"></div>
-            <div class="branch math" data-subject="Math"></div>
-            <div class="branch science" data-subject="Science"></div>
-            <div class="branch history" data-subject="History"></div>
+        <h1>🌳 My Knowledge Tree</h1>
+        <p class="subtitle">Leaves = lessons • Fruits = milestones</p>
+        <!-- Reduced canvas height from 700 → 500 -->
+        <canvas id="treeCanvas" width="1000" height="500"></canvas>
+        <div class="buttons">
+            <button id="add-leaf">➕ Add Leaf</button>
+            <button id="add-fruit">🍎 Add Fruit</button>
         </div>
-        <button id="add-leaf">Add Leaf</button>
-        <button id="add-fruit">Add Fruit</button>
     </div>
-
     <script src="tree.script.js"></script>
 </body>
 
