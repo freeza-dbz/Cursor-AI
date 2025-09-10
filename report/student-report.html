@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Report</title>
+    <link rel="stylesheet" href="../signup/theme.css" />
+    <style>
+        .report-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            padding: 32px 24px;
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+        .subject-table, .skills-table, .badges-table, .attendance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        .subject-table th, .subject-table td,
+        .skills-table th, .skills-table td,
+        .badges-table th, .badges-table td,
+        .attendance-table th, .attendance-table td {
+            border: 1px solid var(--muted);
+            padding: 8px 10px;
+            text-align: left;
+        }
+        .trend-graph {
+            height: 60px;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--primary-600) 100%);
+            border-radius: 8px;
+            margin: 8px 0;
+            opacity: 0.2;
+        }
+        .badges-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .badge {
+            background: var(--primary);
+            color: #fff;
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .notes-area {
+            width: 100%;
+            min-height: 60px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--muted);
+            color: var(--text);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 6px;
+        }
+        .privacy-note {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 18px;
+        }
+        @media (max-width: 700px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .report-container {
+                padding: 16px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <h1>Student Performance Report</h1>
+        <!-- 1. Basic Student Info -->
+        <section class="section">
+            <h2>Basic Information</h2>
+            <div class="info-grid">
+                <div><strong>Name:</strong> John Doe</div>
+                <div><strong>Unique ID:</strong> 2025A1234</div>
+                <div><strong>Class/Grade:</strong> 10th</div>
+                <div><strong>School:</strong> ABC International School</div>
+                <div><strong>Date of Birth:</strong> 15 March 2010</div>
+                <div><strong>Reporting Period:</strong> Jan–Mar 2025</div>
+            </div>
+        </section>
+        <!-- 2. Overall Performance Summary -->
+        <section class="section">
+            <h2>Overall Performance</h2>
+            <div class="info-grid">
+                <div><strong>Overall Score:</strong> 82%</div>
+                <div><strong>Rank/Percentile:</strong> 5th in class, 12th in school, 120th state, 800th national</div>
+                <div><strong>Strengths:</strong> Science, Reading Comprehension</div>
+                <div><strong>Areas of Improvement:</strong> Logic, Problem Solving</div>
+                <div><strong>Engagement Level:</strong> High</div>
+            </div>
+        </section>
+        <!-- 3. Subject-wise Performance -->
+        <section class="section">
+            <h2>Subject-wise Performance</h2>
+            <table class="subject-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Avg. Score</th>
+                        <th>Progress</th>
+                        <th>Tests Attempted</th>
+                        <th>Time Spent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Math</td>
+                        <td>85%</td>
+                        <td><div class="trend-graph"></div></td>
+                        <td>6</td>
+                        <td>12h</td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td>90%</td>
+                        <td><div class="trend-graph"></div></td>
+                        <td>5</td>
+                        <td>10h</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>78%</td>
+                        <td><div class="trend-graph"></div></td>
+                        <td>4</td>
+                        <td>8h</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- 4. Learning Habits & Activities -->
+        <section class="section">
+            <h2>Learning Habits & Activities</h2>
+            <div class="info-grid">
+                <div><strong>Books/Articles Read:</strong> 8</div>
+                <div><strong>Pages Completed:</strong> 320</div>
+                <div><strong>Categories:</strong> Science, Tech, Stories</div>
+                <div><strong>Videos Watched:</strong> 12</div>
+                <div><strong>Lessons Completed:</strong> 10</div>
+                <div><strong>Quizzes Attempted:</strong> 9 (Accuracy: 88%)</div>
+                <div><strong>Practice Streaks:</strong> 15 days</div>
+            </div>
+        </section>
+        <!-- 5. Skills & Competency -->
+        <section class="section">
+            <h2>Skills & Competency</h2>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Logical Reasoning</td><td>80%</td></tr>
+                    <tr><td>Quantitative Aptitude</td><td>85%</td></tr>
+                    <tr><td>Verbal/Language Skills</td><td>78%</td></tr>
+                    <tr><td>Creativity/Problem-Solving</td><td>75%</td></tr>
+                    <tr><td>Critical Thinking</td><td>82%</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- 6. Gamification & Motivation -->
+        <section class="section">
+            <h2>Gamification & Motivation</h2>
+            <div class="info-grid">
+                <div><strong>XP Points:</strong> 3200</div>
+                <div><strong>Level Achieved:</strong> 7</div>
+                <div><strong>Streak Record:</strong> 15 days</div>
+                <div><strong>Leaderboard Position:</strong> 5th (School), 20th (District), 120th (State), 800th (National)</div>
+            </div>
+            <div class="badges-list" style="margin-top:12px;">
+                <span class="badge">Math Ninja</span>
+                <span class="badge">Science Explorer</span>
+                <span class="badge">Reading Star</span>
+            </div>
+        </section>
+        <!-- 7. AI-driven Insights -->
+        <section class="section">
+            <h2>AI-driven Insights</h2>
+            <div class="info-grid">
+                <div><strong>Suggested Weak Concepts:</strong> Algebra, Logical Puzzles</div>
+                <div><strong>Recommended Actions:</strong> Extra practice quizzes, Read "Fun with Logic"</div>
+                <div><strong>Personalized Career Suggestions:</strong> Engineering, Data Science</div>
+                <div><strong>Motivation Tips:</strong> You are improving in Math! Keep it up 💡</div>
+            </div>
+        </section>
+        <!-- 8. Attendance & Participation -->
+        <section class="section">
+            <h2>Attendance & Participation</h2>
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Attended</th>
+                        <th>Participation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Webinars</td><td>3/4</td><td>Asked 2 questions</td></tr>
+                    <tr><td>Workshops</td><td>2/2</td><td>Shared 1 project</td></tr>
+                    <tr><td>Forum</td><td>Active</td><td>5 answers, 3 questions</td></tr>
+                    <tr><td>Peer Interaction</td><td>Good</td><td>Collaborated with 4 peers</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- 9. Parental/Teacher Notes -->
+        <section class="section">
+            <h2>Parental/Teacher Notes</h2>
+            <div><strong>Teacher’s remarks:</strong> <div class="notes-area">Shows great curiosity in science and participates actively in class discussions.</div></div>
+            <div><strong>Parent’s observations:</strong> <div class="notes-area">Enjoys reading and solving puzzles at home.</div></div>
+            <div><strong>Student’s self-reflection:</strong> <div class="notes-area">I want to improve my logic and try more math challenges.</div></div>
+        </section>
+        <!-- 10. Compliance & Privacy -->
+        <section class="section">
+            <h2>Compliance & Privacy</h2>
+            <div><strong>Date of Report Generation:</strong> 10 September 2025</div>
+            <div class="privacy-note">This report is generated in compliance with DPDP/GDPR. Student data is confidential and used only for educational purposes.</div>
+        </section>
+    </div>
+</body>
+</html>
